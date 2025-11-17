@@ -14,7 +14,6 @@ A deep learning project for classifying **brain MRI scans** into **8 categories*
 * [Data Augmentation](#data-augmentation)
 * [Performance](#performance)
 * [Installation](#installation)
-* [Usage](#usage)
 * [Results](#results)
 * [Technologies Used](#technologies-used)
 * [Model Optimization](#model-optimization)
@@ -106,12 +105,14 @@ Dense(8, activation='softmax')
 ### **Phase 1 — Feature Extraction**
 
 * Base model frozen
+* Adam Optimizer
 * Learning rate: **1e-4**
 * Epochs: **50** (EarlyStopping enabled)
 
 ### **Phase 2 — Fine-Tuning**
 
 * Base model unfrozen
+* Adam Optimizer
 * Learning rate: **1e-5**
 * Epochs: **25** (EarlyStopping enabled)
 
@@ -192,10 +193,6 @@ Training curves show smooth convergence with minimal overfitting, thanks to drop
 ---
 
 ## **Model Optimization**
-Sure! To update your README with the class imbalance information and how you used scikit-learn, here's a suggested revision:
-
----
-
 ## ⚖️ Class Imbalance Handling
 
 This project addresses class imbalance using **automatically computed class weights** via the `scikit-learn` package.
@@ -214,9 +211,7 @@ class_weights=compute_class_weight(class_weight='balanced',classes=np.unique(tra
 This ensures that underrepresented classes are given higher importance during model training, helping to improve overall performance and fairness.
 
 ### **Callbacks**
-
 * `EarlyStopping(patience=5, restore_best_weights=True)`
-
 ---
 
 ## **License**
@@ -227,7 +222,5 @@ This project is licensed under the **MIT License**.
 
 <div align="center">
 
-**Developed with ❤️ for advancing medical AI diagnostics**
-
+**Developed with ❤️ for advancing medical AI diagnostics with help of Dhruv Kumar Dubey,Rakshitha Dahiya,Ankush Mitra**
 </div>
-
