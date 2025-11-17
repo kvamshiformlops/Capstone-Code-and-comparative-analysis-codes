@@ -192,12 +192,26 @@ Training curves show smooth convergence with minimal overfitting, thanks to drop
 ---
 
 ## **Model Optimization**
+Sure! To update your README with the class imbalance information and how you used scikit-learn, here's a suggested revision:
 
-### **Class Imbalance**
-Automatically computed class weights:
+---
 
-* Min weight: ~0.58
-* Max weight: ~2.92
+## ⚖️ Class Imbalance Handling
+
+This project addresses class imbalance using **automatically computed class weights** via the `scikit-learn` package.
+
+### 🔍 Class Weight Summary
+- **Minimum weight:** ~0.58 (most frequent class)
+- **Maximum weight:** ~2.92 (least frequent class)
+
+These weights were computed using:
+
+```python
+from sklearn.utils.class_weight import compute_class_weight
+import numpy as np
+class_weights=compute_class_weight(class_weight='balanced',classes=np.unique(train_data.classes),y=train_data.classes)
+```
+This ensures that underrepresented classes are given higher importance during model training, helping to improve overall performance and fairness.
 
 ### **Callbacks**
 
